@@ -1,0 +1,49 @@
+main {
+  display: none;
+}
+
+main > p {
+  margin: auto;
+  padding: 24px;
+  max-width: 600px;
+  text-align: center;
+}
+
+main > ul {
+  margin: auto;
+  padding: 0 24px;
+  max-width: 600px;
+}
+
+main > ul > li {
+  margin: 6px;
+}
+
+main.show {
+  display: initial;
+}
+
+main > .container {
+  width: 100vw;
+  height: 100vh;
+  max-width: 600px;
+  max-height: 240px;
+  margin: auto;
+  border: 1px solid #000;
+}
+
+main > .container > button {
+  animation-duration: 4.2s;
+  animation-name: animopacity;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animopacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,120 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+}
+body>div {
+  width: 100vw;
+  height: 100vh;
+}
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+.container {
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+}
+.container>button {
+  background-color: #ccc;
+  border: 1px solid #000;
+  position: absolute;
+  opacity: 0;
+}
+.container>button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+button.start,
+button.stop,
+button.close,
+button.fullscreen,
+button.main {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button.start,
+button.stop {
+  top: 0;
+  left: 0;
+}
+button.close {
+  top: 0;
+  right: 0;
+}
+button.main {
+  bottom: 0;
+  left: 0;
+}
+button.fullscreen {
+  bottom: 0;
+  right: 0;
+}
+button.stop {
+  display: none;
+}
+button.stop.playing {
+  display: initial;
+}
+button.start.playing {
+  display: none;
+}
+button.col-first,
+button.col-second {
+  top: 24px;
+  height: calc(100% - 48px);
+  width: 24px;
+}
+button.col-first {
+  right: 0;
+}
+button.col-second {
+  left: 0;
+}
+button.row-first,
+button.row-second {
+  left: 24px;
+  width: calc(100% - 48px);
+  height: 24px;
+}
+button.row-first {
+  bottom: 0;
+}
+button.row-second {
+  top: 0;
+}
+.grid-col {
+  display: grid;
+  grid-template-columns: 1fr 12px 1fr;
+}
+.grid-row {
+  display: grid;
+  grid-template-rows: 1fr 12px 1fr;
+}
+.gutter-col,
+.gutter-row {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+.gutter-col {
+  grid-row: 1/-1;
+  cursor: col-resize;
+  background-image: url(../img/vertical.png);
+  grid-column: 2;
+}
+.gutter-row {
+  grid-column: 1/-1;
+  cursor: row-resize;
+  background-image: url(../img/horizontal.png);
+  grid-row: 2;
+}
