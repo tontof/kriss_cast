@@ -30,6 +30,10 @@ function createBtn(elt, cls, txt) {
 }
 
 function defaultContent(elt) {
+    const video = document.createElement('video');
+    video.setAttribute('autoplay', 'autoplay');
+    elt.appendChild(video);
+
     const btnStart = createBtn(elt, 'start', '▶');
     const btnStop = createBtn(elt, 'stop', '■');
     const btnClose = createBtn(elt, 'close', '⨯');
@@ -39,10 +43,7 @@ function defaultContent(elt) {
     const btnColSecond = createBtn(elt, 'col-second', '+');
     const btnRowFirst = createBtn(elt, 'row-first', '+');
     const btnRowSecond = createBtn(elt, 'row-second', '+');
-    const video = document.createElement('video');
-    video.setAttribute('autoplay', 'autoplay');
     elt.classList.add('container');
-    elt.appendChild(video);
     btnStart.addEventListener("click", (evt) => {
         btnStart.classList.add('playing');
         btnStop.classList.add('playing');
